@@ -72,6 +72,20 @@ module.exports = class Arionum {
   }
 
   /**
+   * Retrieve the transactions of a specified address.
+   *
+   * @param {string} address
+   * @return Promise
+   */
+  getTransactions (address) {
+    return this
+      .getJson({
+        q: 'getTransactions',
+        account: address
+      })
+  }
+
+  /**
    * @returns void
    */
   set nodeAddress (uri) {
