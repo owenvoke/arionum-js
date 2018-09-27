@@ -138,6 +138,20 @@ module.exports = class Arionum {
   }
 
   /**
+   * Retrieve a block by its height.
+   *
+   * @param {int} height
+   * @return Promise
+   */
+  getBlock (height) {
+    return this
+      .getJson({
+        q: 'getBlock',
+        height: height
+      })
+  }
+
+  /**
    * @returns void
    */
   set nodeAddress (uri) {
