@@ -114,6 +114,18 @@ module.exports = class Arionum {
   }
 
   /**
+   * Generate a new public/private key pair and return these with the address.
+   *
+   * @return Promise
+   */
+  generateAccount () {
+    return this
+      .getJson({
+        q: 'generateAccount'
+      })
+  }
+
+  /**
    * @returns void
    */
   set nodeAddress (uri) {
