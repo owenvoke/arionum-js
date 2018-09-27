@@ -100,6 +100,20 @@ module.exports = class Arionum {
   }
 
   /**
+   * Retrieve the public key of a specified address.
+   *
+   * @param {string} address
+   * @return Promise
+   */
+  getPublicKey (address) {
+    return this
+      .getJson({
+        q: 'getPublicKey',
+        account: address
+      })
+  }
+
+  /**
    * @returns void
    */
   set nodeAddress (uri) {
