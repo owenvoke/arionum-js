@@ -210,6 +210,21 @@ module.exports = class Arionum {
   }
 
   /**
+   * Retrieve a list of registered masternodes on the network.
+   *
+   * @return Promise
+   */
+  getMasternodes () {
+    return this
+      .getJson({
+        q: 'masternodes'
+      })
+      .then(data => {
+        return data.masternodes
+      })
+  }
+
+  /**
    * @returns void
    */
   set nodeAddress (uri) {
