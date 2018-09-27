@@ -178,6 +178,27 @@ class Arionum {
   }
 
   /**
+   * Send a transaction.
+   *
+   * @param {Transaction} transaction
+   * @return Promise
+   */
+  sendTransaction (transaction) {
+    return this
+      .getJson({
+        q: 'send',
+        val: transaction.value,
+        dst: transaction.destinationAddress,
+        public_key: transaction.publicKey,
+        signature: transaction.signature,
+        private_key: transaction.privateKey,
+        date: transaction.date,
+        message: transaction.message,
+        version: transaction.version
+      })
+  }
+
+  /**
    * Retrieve the number of transactions in the mempool.
    *
    * @return Promise
