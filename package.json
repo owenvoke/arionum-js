@@ -13,6 +13,9 @@
   },
   "author": "Owen Voke",
   "license": "MIT",
+  "dependencies": {
+    "axios": "^0.18"
+  },
   "devDependencies": {
     "standard": "^12.0"
   }
