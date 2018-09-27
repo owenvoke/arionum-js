@@ -58,6 +58,20 @@ module.exports = class Arionum {
   }
 
   /**
+   * Retrieve the pending balance of a specified address (includes pending transactions).
+   *
+   * @param {string} address
+   * @return Promise
+   */
+  getPendingBalance (address) {
+    return this
+      .getJson({
+        q: 'getPendingBalance',
+        account: address
+      })
+  }
+
+  /**
    * @returns void
    */
   set nodeAddress (uri) {
