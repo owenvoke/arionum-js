@@ -30,6 +30,20 @@ module.exports = class Arionum {
   }
 
   /**
+   * Convert a string to Base58.
+   *
+   * @param {string} data
+   * @return Promise
+   */
+  getBase58 (data) {
+    return this
+      .getJson({
+        q: 'base58',
+        data: data
+      })
+  }
+
+  /**
    * @returns void
    */
   set nodeAddress (uri) {
