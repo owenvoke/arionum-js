@@ -1,6 +1,6 @@
 'use strict'
 
-const axios = require('axios').default
+const axios = require('axios')
 
 /**
  * The request endpoint for API calls.
@@ -14,7 +14,7 @@ const API_STATUS_OK = 'ok'
 /**
  * Class Arionum
  */
-module.exports = class Arionum {
+class Arionum {
   /**
    * Retrieve the address for a specified public key.
    *
@@ -272,3 +272,9 @@ module.exports = class Arionum {
       })
   }
 }
+
+// Export Arionum class
+module.exports = Arionum
+
+// Allow use of default import syntax in TypeScript
+module.exports.default = Arionum
