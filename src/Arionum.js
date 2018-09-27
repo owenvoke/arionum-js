@@ -126,6 +126,18 @@ module.exports = class Arionum {
   }
 
   /**
+   * Retrieve the current block as an object.
+   *
+   * @return Promise
+   */
+  getCurrentBlock () {
+    return this
+      .getJson({
+        q: 'currentBlock'
+      })
+  }
+
+  /**
    * @returns void
    */
   set nodeAddress (uri) {
