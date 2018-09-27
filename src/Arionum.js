@@ -152,6 +152,20 @@ module.exports = class Arionum {
   }
 
   /**
+   * Retrieve the transactions of a specified block.
+   *
+   * @param {string} blockId
+   * @return Promise
+   */
+  getBlockTransactions (blockId) {
+    return this
+      .getJson({
+        q: 'getBlockTransactions',
+        block: blockId
+      })
+  }
+
+  /**
    * @returns void
    */
   set nodeAddress (uri) {
