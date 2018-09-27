@@ -1,0 +1,19 @@
+{
+  "name": "arionum-js",
+  "version": "0.0.0",
+  "description": "An API wrapper for the Arionum cryptocurrency node.",
+  "main": "src/index.js",
+  "scripts": {
+    "check-style": "standard \"src/**/*.js\"",
+    "fix-style": "standard \"src/**/*.js\" --fix"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pxgamer/arionum-js.git"
+  },
+  "author": "Owen Voke",
+  "license": "MIT",
+  "devDependencies": {
+    "standard": "^12.0"
+  }
+}
