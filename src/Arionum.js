@@ -225,6 +225,20 @@ module.exports = class Arionum {
   }
 
   /**
+   * Retrieve the alias for an account by it's address.
+   *
+   * @param {string} address
+   * @return Promise
+   */
+  getAlias (address) {
+    return this
+      .getJson({
+        q: 'getAlias',
+        account: address
+      })
+  }
+
+  /**
    * @returns void
    */
   set nodeAddress (uri) {
