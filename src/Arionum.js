@@ -178,6 +178,18 @@ module.exports = class Arionum {
   }
 
   /**
+   * Retrieve the number of transactions in the mempool.
+   *
+   * @return Promise
+   */
+  getMempoolSize () {
+    return this
+      .getJson({
+        q: 'mempoolSize'
+      })
+  }
+
+  /**
    * @returns void
    */
   set nodeAddress (uri) {
