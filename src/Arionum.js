@@ -190,6 +190,26 @@ module.exports = class Arionum {
   }
 
   /**
+   * Retrieve a random number based on a specified block.
+   *
+   * @param {int}         height
+   * @param {int}         minimum
+   * @param {int|null}    maximum
+   * @param {string|null} seed
+   * @return Promise
+   */
+  getRandomNumber (height, minimum, maximum, seed = null) {
+    return this
+      .getJson({
+        q: 'randomNumber',
+        height: height,
+        min: minimum,
+        max: maximum,
+        seed: seed
+      })
+  }
+
+  /**
    * @returns void
    */
   set nodeAddress (uri) {
