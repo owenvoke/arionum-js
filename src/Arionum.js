@@ -16,6 +16,20 @@ const API_STATUS_OK = 'ok'
  */
 module.exports = class Arionum {
   /**
+   * Retrieve the address for a specified public key.
+   *
+   * @param {string} publicKey
+   * @return Promise
+   */
+  getAddress (publicKey) {
+    return this
+      .getJson({
+        q: 'getAddress',
+        public_key: publicKey
+      })
+  }
+
+  /**
    * @returns void
    */
   set nodeAddress (uri) {
@@ -30,19 +44,19 @@ module.exports = class Arionum {
   }
 
   /**
-   * @param params
+   * @param {Object} params
    * @return {*|Promise}
    */
-  getJson (params) {
+  async getJson (params) {
     return axios
       .get(this.nodeAddress + API_ENDPOINT, {
         params
       })
-      .then((response) => {
+      .then(response => {
         let data = response.data
 
         if (data.status === API_STATUS_OK) {
-          return data
+          return data.data
         }
 
         throw Error('An unknown API error occurred.')
