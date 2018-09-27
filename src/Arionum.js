@@ -166,6 +166,18 @@ module.exports = class Arionum {
   }
 
   /**
+   * Retrieve the version of the node.
+   *
+   * @return Promise
+   */
+  getNodeVersion () {
+    return this
+      .getJson({
+        q: 'version'
+      })
+  }
+
+  /**
    * @returns void
    */
   set nodeAddress (uri) {
