@@ -44,6 +44,20 @@ module.exports = class Arionum {
   }
 
   /**
+   * Retrieve the balance of a specified address.
+   *
+   * @param {string} address
+   * @return Promise
+   */
+  getBalance (address) {
+    return this
+      .getJson({
+        q: 'getBalance',
+        account: address
+      })
+  }
+
+  /**
    * @returns void
    */
   set nodeAddress (uri) {
