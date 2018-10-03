@@ -159,9 +159,11 @@ arionum.getAlias('address').then(getAlias => {
   console.log(getAlias)
 })
 ```
-**Send()**
 
-```let transaction = new Transaction()
+**Send a transaction**
+
+```js
+let transaction = new Transaction()
 
 transaction.value = 1
 transaction.destinationAddress = '...'
@@ -172,7 +174,8 @@ transaction.message = '...'
 
 arionum.sendTransaction(transaction).then(result => {
   console.log(result)
-})```
+})
+```
 
 ## Change log
 
