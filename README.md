@@ -159,6 +159,20 @@ arionum.getAlias('address').then(getAlias => {
   console.log(getAlias)
 })
 ```
+**Send()**
+
+```let transaction = new Transaction()
+
+transaction.value = 1
+transaction.destinationAddress = '...'
+transaction.publicKey = '...'
+transaction.signature = '...'
+transaction.date = 1
+transaction.message = '...'
+
+arionum.sendTransaction(transaction).then(result => {
+  console.log(result)
+})```
 
 ## Change log
 
