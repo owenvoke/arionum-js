@@ -160,6 +160,23 @@ arionum.getAlias('address').then(getAlias => {
 })
 ```
 
+**Send a transaction**
+
+```js
+let transaction = new Transaction()
+
+transaction.value = 1
+transaction.destinationAddress = '...'
+transaction.publicKey = '...'
+transaction.signature = '...'
+transaction.date = 1
+transaction.message = '...'
+
+arionum.sendTransaction(transaction).then(result => {
+  console.log(result)
+})
+```
+
 ## Change log
 
 Please see [CHANGELOG](CHANGELOG.md) for more information on what has changed recently.
