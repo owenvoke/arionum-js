@@ -260,6 +260,18 @@ class Arionum {
   }
 
   /**
+   * Retrieve details about the nodes sanity process.
+   *
+   * @return Promise
+   */
+  getSanityDetails () {
+    return this
+      .getJson({
+        q: 'sanity'
+      })
+  }
+
+  /**
    * @returns void
    */
   set nodeAddress (uri) {
