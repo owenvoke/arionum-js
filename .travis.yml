@@ -1,0 +1,19 @@
+dist: trusty
+language: node_js
+
+node_js:
+- iojs
+- 8
+- 10
+
+# Cache node_odules
+cache:
+  directories:
+    - node_modules
+
+# This triggers builds to run on the new TravisCI infrastructure.
+# See: https://docs.travis-ci.com/user/reference/trusty#container-based-with-sudo-false
+sudo: false
+
+script:
+- npm run check-style
