@@ -176,6 +176,22 @@ arionum.sendTransaction(transaction).then(result => {
 })
 ```
 
+**Get details about the nodes sanity process**
+
+```js
+arionum.getSanityDetails().then(sanityDetails => {
+  console.log(sanityDetails)
+})
+```
+
+**Get details about the node**
+
+```js
+arionum.getNodeInfo().then(nodeInfo => {
+  console.log(nodeInfo)
+})
+```
+
 ## Change log
 
 Please see [CHANGELOG](CHANGELOG.md) for more information on what has changed recently.
