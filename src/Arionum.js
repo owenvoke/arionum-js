@@ -278,9 +278,9 @@ class Arionum {
    */
   getNodeInfo () {
     return this
-       .getJson({
-         q: 'node-info'
-       })
+      .getJson({
+        q: 'node-info'
+      })
   }
 
   /**
