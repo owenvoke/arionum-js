@@ -272,6 +272,18 @@ class Arionum {
   }
 
   /**
+   * Retrieve details about the node.
+   *
+   * @return Promise
+   */
+  getNodeInfo () {
+    return this
+       .getJson({
+         q: 'node-info'
+       })
+  }
+
+  /**
    * @returns void
    */
   set nodeAddress (uri) {
