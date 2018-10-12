@@ -154,8 +154,8 @@ arionum.getMasternodes().then(masternodes => {
 **Get the alias for a specific address**
 
 ```js
-arionum.getAlias('address').then(getAlias => {
-  console.log(getAlias)
+arionum.getAlias('address').then(alias => {
+  console.log(alias)
 })
 ```
 
