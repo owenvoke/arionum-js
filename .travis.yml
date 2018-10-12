@@ -16,3 +16,6 @@ sudo: false
 
 script:
 - npm run check-style
+
+after_success:
+- bash <(curl -s https://codecov.io/bash)
