@@ -2,4 +2,5 @@
 .idea
 .editorconfig
 .gitattributes
+.travis.yml
 yarn.lock
