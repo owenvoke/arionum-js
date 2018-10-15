@@ -3,7 +3,6 @@
 [![Latest Version on npm][ico-version]][link-npm]
 [![Software License][ico-license]](LICENSE.md)
 [![Build Status][ico-travis]][link-travis]
-[![Style CI][ico-styleci]][link-styleci]
 [![Code Coverage][ico-code-quality]][link-code-quality]
 [![Total Downloads][ico-downloads]][link-downloads]
 
@@ -155,8 +154,41 @@ arionum.getMasternodes().then(masternodes => {
 **Get the alias for a specific address**
 
 ```js
-arionum.getAlias('address').then(getAlias => {
-  console.log(getAlias)
+arionum.getAlias('address').then(alias => {
+  console.log(alias)
+})
+```
+
+**Send a transaction**
+
+```js
+let transaction = new Transaction()
+
+transaction.value = 1
+transaction.destinationAddress = '...'
+transaction.publicKey = '...'
+transaction.signature = '...'
+transaction.date = 1
+transaction.message = '...'
+
+arionum.sendTransaction(transaction).then(result => {
+  console.log(result)
+})
+```
+
+**Get details about the nodes sanity process**
+
+```js
+arionum.getSanityDetails().then(sanityDetails => {
+  console.log(sanityDetails)
+})
+```
+
+**Get details about the node**
+
+```js
+arionum.getNodeInfo().then(nodeInfo => {
+  console.log(nodeInfo)
 })
 ```
 
@@ -184,13 +216,11 @@ The MIT License (MIT). Please see [License File](LICENSE.md) for more informatio
 [ico-version]: https://img.shields.io/npm/v/arionum-js.svg?style=flat-square
 [ico-license]: https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square
 [ico-travis]: https://img.shields.io/travis/pxgamer/arionum-js/master.svg?style=flat-square
-[ico-styleci]: https://styleci.io/repos//shield
 [ico-code-quality]: https://img.shields.io/codecov/c/github/pxgamer/arionum-js.svg?style=flat-square
 [ico-downloads]: https://img.shields.io/npm/dt/arionum-js.svg?style=flat-square
 
 [link-npm]: https://www.npmjs.com/package/arionum-js
 [link-travis]: https://travis-ci.com/pxgamer/arionum-js
-[link-styleci]: https://styleci.io/repos/
 [link-code-quality]: https://codecov.io/gh/pxgamer/arionum-js
 [link-downloads]: https://www.npmjs.com/package/arionum-js
 [link-author]: https://github.com/pxgamer
