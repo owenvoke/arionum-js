@@ -231,6 +231,24 @@ class Arionum {
   }
 
   /**
+   * Check that a signature is valid against a public key.
+   *
+   * @return Promise
+   */
+  checkSignature (signature, data, publicKey) {
+    return this
+      .getJson({
+        q: 'checkSignature',
+        signature: signature,
+        data: data,
+        public_key: publicKey
+      })
+      .then(data => {
+        return data
+      })
+  }
+
+  /**
    * Retrieve a list of registered masternodes on the network.
    *
    * @return Promise
