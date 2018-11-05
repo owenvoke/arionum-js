@@ -58,6 +58,34 @@ class Arionum {
   }
 
   /**
+   * Retrieve the balance of a specified alias.
+   *
+   * @param {string} alias
+   * @return Promise
+   */
+  getBalanceByAlias (alias) {
+    return this
+      .getJson({
+        q: 'getBalance',
+        alias: alias
+      })
+  }
+
+  /**
+   * Retrieve the balance of a specified public key.
+   *
+   * @param {string} publicKey
+   * @return Promise
+   */
+  getBalanceByPublicKey (publicKey) {
+    return this
+      .getJson({
+        q: 'getBalance',
+        public_key: publicKey
+      })
+  }
+
+  /**
    * Retrieve the pending balance of a specified address (includes pending transactions).
    *
    * @param {string} address
