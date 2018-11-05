@@ -86,6 +86,20 @@ class Arionum {
   }
 
   /**
+   * Retrieve the transactions of a specified public key.
+   *
+   * @param {string} publicKey
+   * @return Promise
+   */
+  getTransactionsByPublicKey (publicKey) {
+    return this
+      .getJson({
+        q: 'getTransactions',
+        public_key: publicKey
+      })
+  }
+
+  /**
    * Retrieve a specified transaction by its id.
    *
    * @param {string} transactionId
