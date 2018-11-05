@@ -58,6 +58,34 @@ class Arionum {
   }
 
   /**
+   * Retrieve the balance of a specified alias.
+   *
+   * @param {string} alias
+   * @return Promise
+   */
+  getBalanceByAlias (alias) {
+    return this
+      .getJson({
+        q: 'getBalance',
+        alias: alias
+      })
+  }
+
+  /**
+   * Retrieve the balance of a specified public key.
+   *
+   * @param {string} publicKey
+   * @return Promise
+   */
+  getBalanceByPublicKey (publicKey) {
+    return this
+      .getJson({
+        q: 'getBalance',
+        public_key: publicKey
+      })
+  }
+
+  /**
    * Retrieve the pending balance of a specified address (includes pending transactions).
    *
    * @param {string} address
@@ -82,6 +110,20 @@ class Arionum {
       .getJson({
         q: 'getTransactions',
         account: address
+      })
+  }
+
+  /**
+   * Retrieve the transactions of a specified public key.
+   *
+   * @param {string} publicKey
+   * @return Promise
+   */
+  getTransactionsByPublicKey (publicKey) {
+    return this
+      .getJson({
+        q: 'getTransactions',
+        public_key: publicKey
       })
   }
 
@@ -231,6 +273,27 @@ class Arionum {
   }
 
   /**
+   * Check that a signature is valid against a public key.
+   *
+   * @param {string} signature
+   * @param {string} data
+   * @param {string} publicKey
+   * @return Promise
+   */
+  checkSignature (signature, data, publicKey) {
+    return this
+      .getJson({
+        q: 'checkSignature',
+        signature: signature,
+        data: data,
+        public_key: publicKey
+      })
+      .then(data => {
+        return data
+      })
+  }
+
+  /**
    * Retrieve a list of registered masternodes on the network.
    *
    * @return Promise
@@ -280,6 +343,23 @@ class Arionum {
     return this
       .getJson({
         q: 'node-info'
+      })
+  }
+
+  /**
+   * Check that an address is valid.
+   * Optionally validate it against the corresponding public key.
+   *
+   * @param {string} address
+   * @param {string|null} publicKey
+   * @return Promise
+   */
+  checkAddress (address, publicKey = null) {
+    return this
+      .getJson({
+        q: 'checkAddress',
+        account: address,
+        public_key: publicKey
       })
   }
 
