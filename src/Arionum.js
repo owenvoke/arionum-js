@@ -233,6 +233,9 @@ class Arionum {
   /**
    * Check that a signature is valid against a public key.
    *
+   * @param {string} signature
+   * @param {string} data
+   * @param {string} publicKey
    * @return Promise
    */
   checkSignature (signature, data, publicKey) {
@@ -298,6 +301,23 @@ class Arionum {
     return this
       .getJson({
         q: 'node-info'
+      })
+  }
+
+  /**
+   * Check that an address is valid.
+   * Optionally validate it against the corresponding public key.
+   *
+   * @param {string} address
+   * @param {string|null} publicKey
+   * @return Promise
+   */
+  checkAddress (address, publicKey = null) {
+    return this
+      .getJson({
+        q: 'checkAddress',
+        account: address,
+        public_key: publicKey
       })
   }
 
