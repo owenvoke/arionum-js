@@ -71,6 +71,14 @@ arionum.getTransactions('address').then(transactions => {
 })
 ```
 
+**Get the transactions for a public key**
+
+```js
+arionum.getTransactionsByPublicKey('public-key').then(transactions => {
+  console.log(transactions)
+})
+```
+
 **Get the transaction by its id**
 
 ```js
@@ -189,6 +197,22 @@ arionum.getSanityDetails().then(sanityDetails => {
 ```js
 arionum.getNodeInfo().then(nodeInfo => {
   console.log(nodeInfo)
+})
+```
+
+**Check the validity of a signature**
+
+```js
+arionum.checkSignature('signature', 'data', 'public-key').then(signatureStatus => {
+  console.log(signatureStatus)
+})
+```
+
+**Check the validity of an address**
+
+```js
+arionum.checkAddress('address').then(addressStatus => {
+  console.log(addressStatus)
 })
 ```
 
