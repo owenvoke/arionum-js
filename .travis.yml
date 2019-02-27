@@ -4,7 +4,7 @@ language: node_js
 node_js:
 - node
 
-# Cache node_odules
+# Cache node_modules
 cache:
   directories:
   - node_modules
