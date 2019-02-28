@@ -6,6 +6,14 @@ Updates should follow the [Keep a CHANGELOG](https://keepachangelog.com) princip
 
 ## [Unreleased]
 
+## [v1.3.1] - 2019-02-28
+
+### Changed
+- Move documentation from the README to a `docs` directory ([0fb6a9d](https://github.com/pxgamer/arionum-js/commit/0fb6a9d57c0922499cf7b2055f4650d455b4ad6e))
+
+### Removed
+- Remove deprecated Travis containerisation ([141322e](https://github.com/pxgamer/arionum-js/commit/141322e0b8e8dc6ccc6e251347f8681fd5a409ea))
+
 ## [v1.3.0] - 2018-11-05
 
 ### Added
@@ -32,6 +40,7 @@ Updates should follow the [Keep a CHANGELOG](https://keepachangelog.com) princip
 - Initial release
 
 [Unreleased]: https://github.com/pxgamer/arionum-js/compare/master...develop 
+[v1.3.1]: https://github.com/pxgamer/arionum-js/compare/v1.3.0...v1.3.1
 [v1.3.0]: https://github.com/pxgamer/arionum-js/compare/v1.2.0...v1.3.0
 [v1.2.0]: https://github.com/pxgamer/arionum-js/compare/v1.1.0...v1.2.0
 [v1.1.0]: https://github.com/pxgamer/arionum-js/compare/v1.0.0...v1.1.0
