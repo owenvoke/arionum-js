@@ -16,12 +16,6 @@ Via npm
 $ npm install arionum-js
 ```
 
-Via Yarn
-
-```bash
-$ yarn add arionum-js
-```
-
 ## Usage
 
 Please see the [usage docs](docs/README.md) directory for information on using this library.
