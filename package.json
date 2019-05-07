@@ -5,7 +5,9 @@
   "main": "src/index.js",
   "scripts": {
     "check-style": "standard \"src/**/*.js\"",
-    "fix-style": "standard \"src/**/*.js\" --fix"
+    "fix-style": "standard \"src/**/*.js\" --fix",
+    "snyk-protect": "snyk protect",
+    "prepare": "npm run snyk-protect"
   },
   "repository": {
     "type": "git",
@@ -17,6 +19,8 @@
     "axios": "^0.18"
   },
   "devDependencies": {
+    "snyk": "^1.161",
     "standard": "^12.0"
-  }
+  },
+  "snyk": true
 }
