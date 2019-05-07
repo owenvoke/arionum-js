@@ -1,12 +1,7 @@
 'use strict'
 
-/**
- * Class Transaction
- */
 class Transaction {
-  /**
-   * Transaction Constructor
-   */
+  /** Transaction Constructor */
   constructor () {
     this.version = 1
   }
