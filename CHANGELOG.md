@@ -6,6 +6,11 @@ Updates should follow the [Keep a CHANGELOG](https://keepachangelog.com) princip
 
 ## [Unreleased]
 
+## [v1.3.2] - 2019-05-07
+
+### Fixed
+- Fix vulnerability in axios using Snyk ([#3](https://github.com/pxgamer/arionum-js/pull/3))
+
 ## [v1.3.1] - 2019-02-28
 
 ### Changed
@@ -40,6 +45,7 @@ Updates should follow the [Keep a CHANGELOG](https://keepachangelog.com) princip
 - Initial release
 
 [Unreleased]: https://github.com/pxgamer/arionum-js/compare/master...develop 
+[v1.3.2]: https://github.com/pxgamer/arionum-js/compare/v1.3.1...v1.3.2
 [v1.3.1]: https://github.com/pxgamer/arionum-js/compare/v1.3.0...v1.3.1
 [v1.3.0]: https://github.com/pxgamer/arionum-js/compare/v1.2.0...v1.3.0
 [v1.2.0]: https://github.com/pxgamer/arionum-js/compare/v1.1.0...v1.2.0

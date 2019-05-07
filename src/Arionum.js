@@ -2,18 +2,11 @@
 
 const axios = require('axios')
 
-/**
- * The request endpoint for API calls.
- */
+/** The request endpoint for API calls. */
 const API_ENDPOINT = '/api.php'
-/**
- * The API status code for a successful response.
- */
+/** The API status code for a successful response. */
 const API_STATUS_OK = 'ok'
 
-/**
- * Class Arionum
- */
 class Arionum {
   /**
    * Retrieve the address for a specified public key.
