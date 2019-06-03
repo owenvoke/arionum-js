@@ -6,6 +6,11 @@ Updates should follow the [Keep a CHANGELOG](https://keepachangelog.com) princip
 
 ## [Unreleased]
 
+## [v1.3.3] - 2019-06-03
+
+### Fixed
+- Fix vulnerability in axios using Snyk ([d1edbc8](https://github.com/pxgamer/arionum-js/commit/d1edbc86c379101bf1228bd215c8b7233226d70c))
+
 ## [v1.3.2] - 2019-05-07
 
 ### Fixed
