@@ -33,5 +33,5 @@ jobs:
     - name: Install npm dependencies
       run: npm i
 
-    - name: PHPUnit Testing
+    - name: Run tests
       run: npm test

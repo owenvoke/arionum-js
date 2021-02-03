@@ -6,9 +6,7 @@
   "scripts": {
     "lint": "standard \"src/**/*.js\" --fix",
     "test:lint": "standard \"src/**/*.js\"",
-    "test": [
-      "npm run test:lint"
-    ]
+    "test": "npm run test:lint"
   },
   "repository": {
     "type": "git",
