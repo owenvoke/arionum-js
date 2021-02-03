@@ -380,7 +380,7 @@ class Arionum {
         params
       })
       .then(response => {
-        let data = response.data
+        const data = response.data
 
         if (data.status === API_STATUS_OK) {
           return data.data
