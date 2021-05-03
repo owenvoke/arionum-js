@@ -6,6 +6,14 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), and this 
 
 ## Unreleased
 
+## [v1.3.4] - 2021-05-03
+
+### Fixed
+- Fix npm `test` script ([15b18c4](https://github.com/owenvoke/arionum-js/commit/15b18c48a66f53356591ae1456ad70dd95b1b25b))
+
+### Changed
+- Update dependencies and details ([8f35ae9](https://github.com/owenvoke/arionum-js/commit/8f35ae9af5d01c904ddb2e8419375ca222ff4f78))
+
 ## [v1.3.3] - 2019-06-03
 
 ### Fixed
