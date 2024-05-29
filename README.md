@@ -23,9 +23,9 @@ Initialise the Arionum node configuration object:
 ```typescript
 import { buildNodeConfiguration } from "arionum-js";
 
-const uri = 'http://peer1.arionum.com'
+const url = 'http://peer1.arionum.com'
 
-const nodeConfiguration = buildNodeConfiguration({ uri })
+const nodeConfiguration = buildNodeConfiguration({ url })
 ```
 
 Then pass this to any of the SDK functions:
