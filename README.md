@@ -12,13 +12,30 @@ An API wrapper for the Arionum cryptocurrency node.
 
 Via npm
 
-```bash
-$ npm install arionum-js
+```shell
+npm install arionum-js
 ```
 
 ## Usage
 
-Please see the [usage docs](docs/README.md) directory for information on using this library.
+Initialise the Arionum node configuration object:
+
+```typescript
+import { buildNodeConfiguration } from "arionum-js";
+
+const uri = 'http://peer1.arionum.com'
+
+const nodeConfiguration = buildNodeConfiguration({ uri })
+```
+
+Then pass this to any of the SDK functions:
+
+```typescript
+import { getBlock } from "arionum-js";
+
+// This returns basic metadata about the specified block.
+const block = getBlock(nodeConfiguration, { height: 12345 });
+```
 
 ## Change log
 
@@ -34,8 +51,8 @@ If you discover any security related issues, please email security@voke.dev inst
 
 ## Credits
 
-- [Owen Voke][link-author]
-- [All Contributors][link-contributors]
+-   [Owen Voke][link-author]
+-   [All Contributors][link-contributors]
 
 ## License
 
@@ -53,7 +70,7 @@ Read more about Treeware at [treeware.earth][link-treeware].
 
 [ico-version]: https://img.shields.io/npm/v/arionum-js.svg?style=flat-square
 [ico-license]: https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square
-[ico-github-actions]: https://img.shields.io/github/workflow/status/owenvoke/arionum-js/Tests.svg?style=flat-square
+[ico-github-actions]: https://img.shields.io/github/actions/workflow/status/owenvoke/arionum-js/tests.yml?branch=main&style=flat-square
 [ico-downloads]: https://img.shields.io/npm/dt/arionum-js.svg?style=flat-square
 [ico-treeware-gifting]: https://img.shields.io/badge/Treeware-%F0%9F%8C%B3-lightgreen?style=flat-square
 

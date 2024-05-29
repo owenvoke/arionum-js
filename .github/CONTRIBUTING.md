@@ -2,11 +2,11 @@
 
 Contributions are **welcome** and will be fully **credited**.
 
-We accept contributions via Pull Requests on [Github](https://github.com/pxgamer/arionum-js).
+We accept contributions via Pull Requests on [GitHub](https://github.com/owenvoke/arionum-js).
 
 ## Pull Requests
 
-- **[StandardJS Coding Standard](https://standardjs.com)** - Check the code style with ``$ npm check-style`` and fix it with ``$ npm fix-style``.
+- **Prettier Coding Standard** - This is automatically linted by Prettier.
 
 - **Add tests!** - If possible, try to add tests to support your patch.
 
@@ -14,6 +14,6 @@ We accept contributions via Pull Requests on [Github](https://github.com/pxgamer
 
 - **Consider our release cycle** - We try to follow [SemVer v2.0.0](https://semver.org). Randomly breaking public APIs is not an option.
 
-- **Create feature branches** - Don't ask us to pull from your master branch.
+- **Create feature branches** - Don't ask us to pull from your main branch.
 
 - **One pull request per feature** - If you want to do more than one thing, send multiple pull requests.
