@@ -10,3 +10,5 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), and this 
 
 ### Added
 - Rewrite using TypeScript
+- Support tree shaking
+- Bundle for ESM, CJS, and UMD
