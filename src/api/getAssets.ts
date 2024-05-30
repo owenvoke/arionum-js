@@ -1,26 +1,25 @@
 import { NodeConfiguration } from "../utils/public";
 import { buildRequestUrl } from "../utils/internal";
 import { call } from "../utils/internal";
+import { Asset, assetFromApi } from "./models";
 
-export const getAlias = async (
+export const getAssets = async (
     nodeConfiguration: NodeConfiguration,
-    payload: { address: string; publicKey?: string },
-): Promise<string> => {
-    const { address, publicKey } = payload;
+    payload: { asset?: string },
+): Promise<Array<Asset>> => {
+    const { asset } = payload;
 
     const queryParams: Record<string, number | string> = {
-        q: "getAlias",
+        q: "assets",
     };
 
-    if (publicKey) {
-        queryParams.public_key = publicKey;
-    }
-
-    if (address) {
-        queryParams.account = address;
+    if (asset) {
+        queryParams.asset = asset;
     }
 
     const url = buildRequestUrl(nodeConfiguration.url, "/api.php", queryParams);
 
-    return await call<string>({ url });
+    return (await call<Array<any>>({ url })).map((data: any) =>
+        assetFromApi(data),
+    );
 };

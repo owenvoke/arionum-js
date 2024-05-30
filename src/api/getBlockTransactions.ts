@@ -17,13 +17,11 @@ export const getBlockTransactions = async (
         q: "getBlockTransactions",
     };
 
-    if (!height && !blockId) {
-        throw new Error("At least one block identifier must be provided.");
-    }
-
     if (height) {
         queryParams.height = height;
-    } else if (blockId) {
+    }
+
+    if (blockId) {
         queryParams.block = blockId;
     }
 
@@ -33,7 +31,7 @@ export const getBlockTransactions = async (
 
     const url = buildRequestUrl(nodeConfiguration.url, "/api.php", queryParams);
 
-    return (await call<Array<any>>({ url })).map((transaction: any) =>
-        transactionFromApi(transaction),
+    return (await call<Array<any>>({ url })).map((data: any) =>
+        transactionFromApi(data),
     );
 };

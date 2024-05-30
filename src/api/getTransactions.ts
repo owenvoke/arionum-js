@@ -13,13 +13,11 @@ export const getTransactions = async (
         q: "getTransactions",
     };
 
-    if (!publicKey && !account) {
-        throw new Error("At least one account identifier must be provided.");
-    }
-
     if (publicKey) {
         queryParams.public_key = publicKey;
-    } else if (account) {
+    }
+
+    if (account) {
         queryParams.account = account;
     }
 
@@ -29,7 +27,7 @@ export const getTransactions = async (
 
     const url = buildRequestUrl(nodeConfiguration.url, "/api.php", queryParams);
 
-    return (await call<Array<any>>({ url })).map((transaction: any) =>
-        transactionFromApi(transaction),
+    return (await call<Array<any>>({ url })).map((data: any) =>
+        transactionFromApi(data),
     );
 };

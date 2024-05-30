@@ -1,4 +1,7 @@
 export * from "./account-keypair.model";
+export * from "./asset.model";
+export * from "./asset-balance.model";
+export * from "./asset-order.model";
 export * from "./block.model";
 export * from "./masternode.model";
 export * from "./node-info.model";
