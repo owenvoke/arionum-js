@@ -1,7 +1,7 @@
 import { NodeConfiguration } from "../utils/public";
 import { buildRequestUrl } from "../utils/internal";
 import { call } from "../utils/internal";
-import { AccountKeypair } from "./models";
+import { AccountKeypair, accountKeypairFromApi } from "./models";
 
 export const generateAccount = async (
     nodeConfiguration: NodeConfiguration,
@@ -12,5 +12,5 @@ export const generateAccount = async (
 
     const url = buildRequestUrl(nodeConfiguration.url, "/api.php", queryParams);
 
-    return await call<AccountKeypair>({ url });
+    return accountKeypairFromApi(await call<any>({ url }));
 };
