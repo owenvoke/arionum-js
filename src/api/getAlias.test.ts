@@ -2,17 +2,17 @@ import { http, HttpResponse } from "msw";
 import { setupServer } from "msw/node";
 
 import { buildNodeConfiguration } from "../utils/public";
-import { checkAddress } from "./checkAddress";
+import { getAlias } from "./getAlias";
 
 const server = setupServer();
 
-describe("Function: checkAddress", () => {
+describe("Function: getAlias", () => {
     // MSW Setup
     beforeAll(() => server.listen());
     afterEach(() => server.resetHandlers());
     afterAll(() => server.close());
 
-    it("returns true when address is valid", async () => {
+    it("returns alias for address", async () => {
         // ARRANGE
         const nodeConfiguration = buildNodeConfiguration({
             url: "http://localhost",
@@ -20,8 +20,8 @@ describe("Function: checkAddress", () => {
 
         const mockResponse = {
             status: "ok",
-            data: true,
-            coint: "arionum",
+            data: "PXGAMER",
+            coin: "arionum",
         };
 
         let requestUrl = "";
@@ -34,20 +34,20 @@ describe("Function: checkAddress", () => {
         );
 
         // ACT
-        const response = await checkAddress(nodeConfiguration, {
+        const response = await getAlias(nodeConfiguration, {
             address:
-                "5ADfrJUnLefPsaYjMTR4KmvQ79eHo2rYWnKBRCXConYKYJVAw2adtzb38oUG5EnsXEbTct3p7GagT2VVZ9hfVTVn",
+                "51sJ4LbdKzhyGy4zJGqodNLse9n9JsVT2rdeH92w7cf3qQuSDJupvjbUT1UBr7r1SCUAXG97saxn7jt2edKb4v4J",
         });
 
         // ASSERT
         expect(requestUrl).toContain(
-            "account=5ADfrJUnLefPsaYjMTR4KmvQ79eHo2rYWnKBRCXConYKYJVAw2adtzb38oUG5EnsXEbTct3p7GagT2VVZ9hfVTVn",
+            "account=51sJ4LbdKzhyGy4zJGqodNLse9n9JsVT2rdeH92w7cf3qQuSDJupvjbUT1UBr7r1SCUAXG97saxn7jt2edKb4v4J",
         );
 
-        expect(response).toEqual(true);
+        expect(response).toEqual("PXGAMER");
     });
 
-    it("returns false when address is invalid", async () => {
+    it("returns alias with public key validation", async () => {
         // ARRANGE
         const nodeConfiguration = buildNodeConfiguration({
             url: "http://localhost",
@@ -55,8 +55,8 @@ describe("Function: checkAddress", () => {
 
         const mockResponse = {
             status: "ok",
-            data: false,
-            coint: "arionum",
+            data: "PXGAMER",
+            coin: "arionum",
         };
 
         let requestUrl = "";
@@ -69,13 +69,16 @@ describe("Function: checkAddress", () => {
         );
 
         // ACT
-        const response = await checkAddress(nodeConfiguration, {
-            address: "invalid",
+        const response = await getAlias(nodeConfiguration, {
+            publicKey:
+                "PZ8Tyr4Nx8MHsRAGMpZmZ6TWY63dXWSCyk7aKeBJ6LL44w5JGSFp82Wb1Drqicuznv1qmRVQMvbmF64AeczjMtV72acGLR9RsiQ2JccemNrSPkKi8KDk72t4",
         });
 
         // ASSERT
-        expect(requestUrl).toContain("account=invalid");
+        expect(requestUrl).toContain(
+            "public_key=PZ8Tyr4Nx8MHsRAGMpZmZ6TWY63dXWSCyk7aKeBJ6LL44w5JGSFp82Wb1Drqicuznv1qmRVQMvbmF64AeczjMtV72acGLR9RsiQ2JccemNrSPkKi8KDk72t4",
+        );
 
-        expect(response).toEqual(false);
+        expect(response).toEqual("PXGAMER");
     });
 });

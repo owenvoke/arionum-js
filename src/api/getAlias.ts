@@ -4,7 +4,7 @@ import { call } from "../utils/internal";
 
 export const getAlias = async (
     nodeConfiguration: NodeConfiguration,
-    payload: { address: string; publicKey?: string },
+    payload: { address?: string; publicKey?: string },
 ): Promise<string> => {
     const { address, publicKey } = payload;
 

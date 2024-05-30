@@ -21,6 +21,7 @@ describe("Function: checkSignature", () => {
         const mockResponse = {
             status: "ok",
             data: true,
+            coint: "arionum",
         };
 
         let requestUrl = "";
@@ -64,6 +65,7 @@ describe("Function: checkSignature", () => {
         const mockResponse = {
             status: "ok",
             data: false,
+            coint: "arionum",
         };
 
         let requestUrl = "";
