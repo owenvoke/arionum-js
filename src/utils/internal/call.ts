@@ -21,7 +21,9 @@ export const call = async <
 
     const jsonResponse = await rawResponse.json();
 
-    if (jsonResponse.status !== "ok" || jsonResponse.data === undefined) {
+    if (jsonResponse.status === "error" && jsonResponse.data !== undefined) {
+        throw new Error(`An API error occurred: ${jsonResponse.data}`);
+    } else if (jsonResponse.status !== "ok") {
         throw new Error("An unknown API error occurred.");
     }
 
