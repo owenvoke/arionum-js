@@ -6,6 +6,14 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), and this 
 
 ## Unreleased
 
+## 2.1.0
+
+### Added
+- Add asset functions (`getAssets()`, `getAssetBalance()`, and `getAssetOrders()`)
+
+### Fixed
+- Fix return type for `generateAccount()`
+
 ## 2.0.0
 
 ### Added
